@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Example #1</title>
+    <meta<?php $this->writeAttributes(array ('http-equiv' => 'Content-Type', 'content' => 'application/xhtml+xml; charset=utf-8')); ?> />
+    <link<?php $this->writeAttributes(array ('rel' => 'stylesheet', 'type' => 'text/css', 'href' => 'tpl/main.css')); ?> />
+  </head>
+  <body>
+    <table>
+      <!--[if IE]>
+        <p>
+          Foo bar. Foo bar. Foo bar. Foo bar. Foo bar. Foo bar. Foo
+          bar. Foo bar. Foo bar. Foo bar. Foo bar. Foo bar. Foo bar.
+          Foo bar. Foo bar. Foo bar.
+        </p>
+      <![endif]-->
+      <!-- Lorem ipsum -->
+      <!--
+        Bez nagłówka, ciekawe jak to wygląda? W rzeczywistości
+        to tylko test komentarza
+
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Value</th>
+        </tr>
+      -->
+<?php foreach ($models as $model) { ?>
+      <tr<?php $this->writeAttributes(array (), $this->parseSquareBrackets($model)); ?>>
+        <td><?php echo $model->ID; ?>
+</td>
+        <td><?php echo $model->name; ?>
+</td>
+        <td><?php echo $model->value; ?>
+</td>
+      </tr>
+<?php } ?>
+    </table>
+  </body>
+</html>
